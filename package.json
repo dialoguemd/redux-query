@@ -19,7 +19,8 @@
     "prepublish": "npm run lint && npm run test && npm run build",
     "lint": "eslint src test",
     "test:cov": "cross-env NODE_ENV=test nyc npm test",
-    "test": "mocha --compilers js:babel-core/register --reporter spec test/**/*.test.js"
+    "test": "mocha --compilers js:babel-core/register --reporter spec test/**/*.test.js",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -49,13 +50,7 @@
     "lodash.values": "^4.3.0",
     "react": "^15.0.1",
     "react-addons-shallow-compare": "^15.4.2",
-    "superagent": "^1.6.1"
-  },
-  "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0-0",
-    "redux": "^2.0.0 || ^3.0.0"
-  },
-  "devDependencies": {
+    "superagent": "^1.6.1",
     "babel-cli": "6.8.0",
     "babel-core": "^6.5.1",
     "babel-eslint": "^7.1.1",
@@ -74,5 +69,9 @@
     "rimraf": "^2.4.3",
     "superagent-mock": "^1.10.0",
     "webpack": "^1.9.6"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0",
+    "redux": "^2.0.0 || ^3.0.0"
   }
 }
